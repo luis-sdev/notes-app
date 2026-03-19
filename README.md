@@ -96,58 +96,13 @@ npm run dev
 
 Open `http://localhost:3000`.
 
-## 5) Demo Script (Suggested)
-
-1. Open signup page and create a user.
-2. Show redirect to dashboard after successful auth.
-3. Create a note and assign a category.
-4. Filter notes by category from sidebar.
-5. Edit and delete a note.
-6. Log out and log back in.
-7. (Optional) Show API endpoints in browser network tab.
-
-## 6) README Requirement: Summary of Process
-
-I built this project in iterative stages:
-
-1. Set up backend API modules (accounts, categories, notes).
-2. Added JWT auth and signup/login flow.
-3. Implemented user-scoped note CRUD with category filtering.
-4. Built frontend auth forms and protected dashboard routes.
-5. Added Axios interceptors for token attach/refresh.
-6. Debugged integration issues (CORS, validation errors, native frontend dependency issues).
-7. Added complete Docker workflow and PostgreSQL service for reproducible demo setup.
-
-## 7) README Requirement: Key Design & Technical Decisions
-
-- **JWT-based auth** for stateless API interaction.
-- **Refresh-token retry** in frontend interceptor to improve UX on token expiry.
-- **Per-user query scoping + object-level permission** for notes security.
-- **Read-only categories** seeded and managed by backend to keep taxonomy consistent.
-- **Dockerized Postgres** for realistic demo environment.
-- **SQLite fallback** preserved for lightweight local development.
-
-## 8) README Requirement: AI Tools Used and How
-
-AI-assisted development was used as a coding copilot and debugger.
-
-- **OpenAI Codex / ChatGPT-style assistant**:
-  - Generated and refactored implementation code.
-  - Helped debug integration issues (frontend build error, CORS mismatch, validation handling).
-  - Produced Dockerization artifacts (`Dockerfile`, `docker-compose.yml`) and setup docs.
-  - Helped improve developer UX by surfacing backend validation messages in frontend.
-
-How it was used in practice:
-- Iterative prompt -> code update -> run/test -> inspect logs/network -> refine.
-- AI outputs were validated manually through local execution, API responses, and browser checks.
-
-## 9) Known Limitations / Next Improvements
+## 5) Known Limitations / Next Improvements
 
 - Current backend uses Django dev server (fine for demo, replace with Gunicorn for production).
 - Authentication token is stored in localStorage (can migrate to httpOnly cookies for stronger security).
 - Additional automated tests can be added for API and UI flows.
 
-## 10) Key Files
+## 6) Key Files
 
 - Backend settings: `backend/config/settings.py`
 - Auth API: `backend/apps/accounts/`
